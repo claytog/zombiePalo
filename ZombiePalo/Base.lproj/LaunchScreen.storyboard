@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZOMBIE APOCALYPSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-WU-wSf">
+                                <rect key="frame" x="134" y="270.5" width="146" height="18.5"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-JO-zkI">
+                                <rect key="frame" x="154.5" y="297" width="105" height="50"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zombie" translatesAutoresizingMaskIntoConstraints="NO" id="any-C1-H4l">
+                                <rect key="frame" x="0.0" y="472" width="428" height="424"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="424" id="ugy-TA-Dp5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="any-C1-H4l" secondAttribute="bottom" constant="-34" id="2f4-Yt-YJd"/>
+                            <constraint firstItem="any-C1-H4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3uY-s4-iFf"/>
+                            <constraint firstItem="any-C1-H4l" firstAttribute="top" secondItem="Kdc-JO-zkI" secondAttribute="bottom" constant="125" id="GKj-wD-era"/>
+                            <constraint firstItem="Kdc-JO-zkI" firstAttribute="top" secondItem="x5N-WU-wSf" secondAttribute="bottom" constant="8" id="JgX-uo-8Je"/>
+                            <constraint firstItem="Kdc-JO-zkI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="L7t-kj-tf2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="any-C1-H4l" secondAttribute="trailing" constant="-34" id="j6J-yD-CJb"/>
+                            <constraint firstItem="x5N-WU-wSf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="r2s-XK-ZZ5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="zombie" width="512" height="512"/>
+    </resources>
+</document>

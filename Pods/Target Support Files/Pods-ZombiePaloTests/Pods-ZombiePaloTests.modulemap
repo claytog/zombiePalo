@@ -1,0 +1,6 @@
+framework module Pods_ZombiePaloTests {
+  umbrella header "Pods-ZombiePaloTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

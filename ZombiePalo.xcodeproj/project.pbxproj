@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		691A05C7249DADB50059F454 /* SeverityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05C6249DADB50059F454 /* SeverityViewController.swift */; };
+		691A05C9249DB2B90059F454 /* SeverityColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 691A05C8249DB2B90059F454 /* SeverityColCell.xib */; };
+		691A05CB249DB6C60059F454 /* SeverityColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05CA249DB6C60059F454 /* SeverityColCell.swift */; };
+		691A05CD249DB7420059F454 /* Severity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05CC249DB7420059F454 /* Severity.swift */; };
+		691A05CF249DBAC60059F454 /* severity.json in Resources */ = {isa = PBXBuildFile; fileRef = 691A05CE249DBAC60059F454 /* severity.json */; };
+		691A05D3249DF1EE0059F454 /* HospitalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05D2249DF1EE0059F454 /* HospitalListViewController.swift */; };
+		691A05D6249DF39E0059F454 /* HospitalListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 691A05D4249DF39E0059F454 /* HospitalListCell.xib */; };
+		691A05D7249DF39E0059F454 /* HospitalListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05D5249DF39E0059F454 /* HospitalListCell.swift */; };
+		691A05D9249E236F0059F454 /* HospitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A05D8249E236F0059F454 /* HospitalViewController.swift */; };
+		69431DC0249D7E9100145896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DBF249D7E9100145896 /* AppDelegate.swift */; };
+		69431DC2249D7E9100145896 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DC1249D7E9100145896 /* SceneDelegate.swift */; };
+		69431DC6249D7E9100145896 /* ZombieZapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DC5249D7E9100145896 /* ZombieZapperViewController.swift */; };
+		69431DC9249D7E9100145896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69431DC7249D7E9100145896 /* Main.storyboard */; };
+		69431DCB249D7E9200145896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69431DCA249D7E9200145896 /* Assets.xcassets */; };
+		69431DCE249D7E9200145896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69431DCC249D7E9200145896 /* LaunchScreen.storyboard */; };
+		69431DD9249D7E9200145896 /* zombiePaloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DD8249D7E9200145896 /* zombiePaloTests.swift */; };
+		69431DE6249D81C500145896 /* IllnessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DE5249D81C500145896 /* IllnessList.swift */; };
+		69431DE8249D844600145896 /* HospitalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DE7249D844600145896 /* HospitalList.swift */; };
+		69431DEA249D86AD00145896 /* PageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DE9249D86AD00145896 /* PageLinks.swift */; };
+		69431DEC249D8D3D00145896 /* ZombieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DEB249D8D3D00145896 /* ZombieAPI.swift */; };
+		69431DEE249D8D7800145896 /* ParseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69431DED249D8D7800145896 /* ParseJSON.swift */; };
+		695F6366249F7ECF009BF0AC /* ZombieScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F6365249F7ECF009BF0AC /* ZombieScoreViewController.swift */; };
+		695F636824A027CC009BF0AC /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F636724A027CC009BF0AC /* Connectivity.swift */; };
+		698BC70F249EDD81007DC809 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698BC70E249EDD81007DC809 /* UIImageView+Extension.swift */; };
+		69FE4568249D929E003184C8 /* zombie.db in Resources */ = {isa = PBXBuildFile; fileRef = 69FE4566249D929D003184C8 /* zombie.db */; };
+		69FE4569249D929E003184C8 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE4567249D929E003184C8 /* DBManager.swift */; };
+		69FE456C249D94BE003184C8 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE456B249D94BD003184C8 /* Util.swift */; };
+		69FE456E249D98C4003184C8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE456D249D98C4003184C8 /* Location.swift */; };
+		69FE4570249D98F4003184C8 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE456F249D98F4003184C8 /* Hospital.swift */; };
+		69FE4572249D9911003184C8 /* Illness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE4571249D9911003184C8 /* Illness.swift */; };
+		69FE4574249D995A003184C8 /* WaitingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE4573249D995A003184C8 /* WaitingList.swift */; };
+		69FE4578249DA317003184C8 /* IllnessListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE4576249DA317003184C8 /* IllnessListViewController.swift */; };
+		69FE457C249DA405003184C8 /* IllnessListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FE457A249DA404003184C8 /* IllnessListCell.swift */; };
+		69FE457D249DA405003184C8 /* IllnessListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69FE457B249DA404003184C8 /* IllnessListCell.xib */; };
+		8D589D3536BAA055AF8D3161 /* Pods_ZombiePalo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6152207634D1917C2EF2C9 /* Pods_ZombiePalo.framework */; };
+		90DAEC726EE9F7B95A851690 /* Pods_ZombiePaloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BB188D74412C6C57AA7C2B /* Pods_ZombiePaloTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69431DD5249D7E9200145896 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69431DB4249D7E9100145896 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69431DBB249D7E9100145896;
+			remoteInfo = zombiePalo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EEE851931BAC069A333C6A6 /* Pods-ZombiePaloTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZombiePaloTests.release.xcconfig"; path = "Target Support Files/Pods-ZombiePaloTests/Pods-ZombiePaloTests.release.xcconfig"; sourceTree = "<group>"; };
+		3885A5888B93DD7CC29C3B37 /* Pods-ZombiePaloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZombiePaloTests.debug.xcconfig"; path = "Target Support Files/Pods-ZombiePaloTests/Pods-ZombiePaloTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3CF4D41CE603C21B5E3911C7 /* Pods-ZombiePalo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZombiePalo.release.xcconfig"; path = "Target Support Files/Pods-ZombiePalo/Pods-ZombiePalo.release.xcconfig"; sourceTree = "<group>"; };
+		691A05C6249DADB50059F454 /* SeverityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityViewController.swift; sourceTree = "<group>"; };
+		691A05C8249DB2B90059F454 /* SeverityColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeverityColCell.xib; sourceTree = "<group>"; };
+		691A05CA249DB6C60059F454 /* SeverityColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverityColCell.swift; sourceTree = "<group>"; };
+		691A05CC249DB7420059F454 /* Severity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Severity.swift; sourceTree = "<group>"; };
+		691A05CE249DBAC60059F454 /* severity.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = severity.json; sourceTree = "<group>"; };
+		691A05D2249DF1EE0059F454 /* HospitalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalListViewController.swift; sourceTree = "<group>"; };
+		691A05D4249DF39E0059F454 /* HospitalListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalListCell.xib; sourceTree = "<group>"; };
+		691A05D5249DF39E0059F454 /* HospitalListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalListCell.swift; sourceTree = "<group>"; };
+		691A05D8249E236F0059F454 /* HospitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalViewController.swift; sourceTree = "<group>"; };
+		69431DBC249D7E9100145896 /* ZombiePalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombiePalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		69431DBF249D7E9100145896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69431DC1249D7E9100145896 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		69431DC5249D7E9100145896 /* ZombieZapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieZapperViewController.swift; sourceTree = "<group>"; };
+		69431DC8249D7E9100145896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		69431DCA249D7E9200145896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69431DCD249D7E9200145896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69431DCF249D7E9200145896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69431DD4249D7E9200145896 /* ZombiePaloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZombiePaloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69431DD8249D7E9200145896 /* zombiePaloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = zombiePaloTests.swift; sourceTree = "<group>"; };
+		69431DDA249D7E9200145896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69431DE5249D81C500145896 /* IllnessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllnessList.swift; sourceTree = "<group>"; };
+		69431DE7249D844600145896 /* HospitalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HospitalList.swift; path = zombiePalo/Model/HospitalList.swift; sourceTree = SOURCE_ROOT; };
+		69431DE9249D86AD00145896 /* PageLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLinks.swift; sourceTree = "<group>"; };
+		69431DEB249D8D3D00145896 /* ZombieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieAPI.swift; sourceTree = "<group>"; };
+		69431DED249D8D7800145896 /* ParseJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseJSON.swift; sourceTree = "<group>"; };
+		695F6365249F7ECF009BF0AC /* ZombieScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieScoreViewController.swift; sourceTree = "<group>"; };
+		695F636724A027CC009BF0AC /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		698BC70E249EDD81007DC809 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		69FE4566249D929D003184C8 /* zombie.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie.db; sourceTree = "<group>"; };
+		69FE4567249D929E003184C8 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		69FE456B249D94BD003184C8 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		69FE456D249D98C4003184C8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		69FE456F249D98F4003184C8 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		69FE4571249D9911003184C8 /* Illness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Illness.swift; sourceTree = "<group>"; };
+		69FE4573249D995A003184C8 /* WaitingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingList.swift; sourceTree = "<group>"; };
+		69FE4576249DA317003184C8 /* IllnessListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllnessListViewController.swift; sourceTree = "<group>"; };
+		69FE457A249DA404003184C8 /* IllnessListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllnessListCell.swift; sourceTree = "<group>"; };
+		69FE457B249DA404003184C8 /* IllnessListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IllnessListCell.xib; sourceTree = "<group>"; };
+		6D6152207634D1917C2EF2C9 /* Pods_ZombiePalo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZombiePalo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6BB188D74412C6C57AA7C2B /* Pods_ZombiePaloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZombiePaloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEB5C11D61ABECC4BA59BC7 /* Pods-ZombiePalo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZombiePalo.debug.xcconfig"; path = "Target Support Files/Pods-ZombiePalo/Pods-ZombiePalo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69431DB9249D7E9100145896 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D589D3536BAA055AF8D3161 /* Pods_ZombiePalo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69431DD1249D7E9200145896 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90DAEC726EE9F7B95A851690 /* Pods_ZombiePaloTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C152F039CF6BC5A0433AE05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D6152207634D1917C2EF2C9 /* Pods_ZombiePalo.framework */,
+				F6BB188D74412C6C57AA7C2B /* Pods_ZombiePaloTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69431DB3249D7E9100145896 = {
+			isa = PBXGroup;
+			children = (
+				69431DBE249D7E9100145896 /* ZombiePalo */,
+				69431DD7249D7E9200145896 /* zombiePaloTests */,
+				69431DBD249D7E9100145896 /* Products */,
+				842FA438F24BBE1CF12B3EA4 /* Pods */,
+				3C152F039CF6BC5A0433AE05 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		69431DBD249D7E9100145896 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69431DBC249D7E9100145896 /* ZombiePalo.app */,
+				69431DD4249D7E9200145896 /* ZombiePaloTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69431DBE249D7E9100145896 /* ZombiePalo */ = {
+			isa = PBXGroup;
+			children = (
+				698BC710249EDD92007DC809 /* Extension */,
+				69FE456A249D949E003184C8 /* Util */,
+				69431DE4249D81A800145896 /* Model */,
+				69431DBF249D7E9100145896 /* AppDelegate.swift */,
+				69431DC1249D7E9100145896 /* SceneDelegate.swift */,
+				69431DC5249D7E9100145896 /* ZombieZapperViewController.swift */,
+				695F6365249F7ECF009BF0AC /* ZombieScoreViewController.swift */,
+				69431DC7249D7E9100145896 /* Main.storyboard */,
+				69431DE3249D811900145896 /* Service */,
+				69431DCA249D7E9200145896 /* Assets.xcassets */,
+				69431DCC249D7E9200145896 /* LaunchScreen.storyboard */,
+				69431DCF249D7E9200145896 /* Info.plist */,
+				69FE4575249DA2AD003184C8 /* VIewController */,
+			);
+			path = ZombiePalo;
+			sourceTree = "<group>";
+		};
+		69431DD7249D7E9200145896 /* zombiePaloTests */ = {
+			isa = PBXGroup;
+			children = (
+				69431DD8249D7E9200145896 /* zombiePaloTests.swift */,
+				69431DDA249D7E9200145896 /* Info.plist */,
+			);
+			path = zombiePaloTests;
+			sourceTree = "<group>";
+		};
+		69431DE3249D811900145896 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				69431DED249D8D7800145896 /* ParseJSON.swift */,
+				69431DEB249D8D3D00145896 /* ZombieAPI.swift */,
+				691A05CE249DBAC60059F454 /* severity.json */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		69431DE4249D81A800145896 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69FE4566249D929D003184C8 /* zombie.db */,
+				69FE4567249D929E003184C8 /* DBManager.swift */,
+				69FE456F249D98F4003184C8 /* Hospital.swift */,
+				69431DE7249D844600145896 /* HospitalList.swift */,
+				69FE4571249D9911003184C8 /* Illness.swift */,
+				69431DE5249D81C500145896 /* IllnessList.swift */,
+				69FE456D249D98C4003184C8 /* Location.swift */,
+				69431DE9249D86AD00145896 /* PageLinks.swift */,
+				691A05CC249DB7420059F454 /* Severity.swift */,
+				69FE4573249D995A003184C8 /* WaitingList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		698BC710249EDD92007DC809 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				698BC70E249EDD81007DC809 /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		69FE456A249D949E003184C8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				69FE456B249D94BD003184C8 /* Util.swift */,
+				695F636724A027CC009BF0AC /* Connectivity.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		69FE4575249DA2AD003184C8 /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				691A05D5249DF39E0059F454 /* HospitalListCell.swift */,
+				691A05D4249DF39E0059F454 /* HospitalListCell.xib */,
+				691A05D2249DF1EE0059F454 /* HospitalListViewController.swift */,
+				691A05D8249E236F0059F454 /* HospitalViewController.swift */,
+				69FE4576249DA317003184C8 /* IllnessListViewController.swift */,
+				69FE457A249DA404003184C8 /* IllnessListCell.swift */,
+				69FE457B249DA404003184C8 /* IllnessListCell.xib */,
+				691A05CA249DB6C60059F454 /* SeverityColCell.swift */,
+				691A05C8249DB2B90059F454 /* SeverityColCell.xib */,
+				691A05C6249DADB50059F454 /* SeverityViewController.swift */,
+			);
+			path = VIewController;
+			sourceTree = "<group>";
+		};
+		842FA438F24BBE1CF12B3EA4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB5C11D61ABECC4BA59BC7 /* Pods-ZombiePalo.debug.xcconfig */,
+				3CF4D41CE603C21B5E3911C7 /* Pods-ZombiePalo.release.xcconfig */,
+				3885A5888B93DD7CC29C3B37 /* Pods-ZombiePaloTests.debug.xcconfig */,
+				1EEE851931BAC069A333C6A6 /* Pods-ZombiePaloTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		69431DBB249D7E9100145896 /* ZombiePalo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69431DDD249D7E9200145896 /* Build configuration list for PBXNativeTarget "ZombiePalo" */;
+			buildPhases = (
+				5CEFECE2FC36CD8DD0025E88 /* [CP] Check Pods Manifest.lock */,
+				69431DB8249D7E9100145896 /* Sources */,
+				69431DB9249D7E9100145896 /* Frameworks */,
+				69431DBA249D7E9100145896 /* Resources */,
+				8342DB8524C2C5769E4A911E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZombiePalo;
+			productName = zombiePalo;
+			productReference = 69431DBC249D7E9100145896 /* ZombiePalo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		69431DD3249D7E9200145896 /* ZombiePaloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69431DE0249D7E9200145896 /* Build configuration list for PBXNativeTarget "ZombiePaloTests" */;
+			buildPhases = (
+				6D658416DD24D94AA51041E7 /* [CP] Check Pods Manifest.lock */,
+				69431DD0249D7E9200145896 /* Sources */,
+				69431DD1249D7E9200145896 /* Frameworks */,
+				69431DD2249D7E9200145896 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69431DD6249D7E9200145896 /* PBXTargetDependency */,
+			);
+			name = ZombiePaloTests;
+			productName = zombiePaloTests;
+			productReference = 69431DD4249D7E9200145896 /* ZombiePaloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69431DB4249D7E9100145896 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Clayton GIlbert";
+				TargetAttributes = {
+					69431DBB249D7E9100145896 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					69431DD3249D7E9200145896 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 69431DBB249D7E9100145896;
+					};
+				};
+			};
+			buildConfigurationList = 69431DB7249D7E9100145896 /* Build configuration list for PBXProject "ZombiePalo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 69431DB3249D7E9100145896;
+			productRefGroup = 69431DBD249D7E9100145896 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69431DBB249D7E9100145896 /* ZombiePalo */,
+				69431DD3249D7E9200145896 /* ZombiePaloTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69431DBA249D7E9100145896 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69431DCE249D7E9200145896 /* LaunchScreen.storyboard in Resources */,
+				69FE457D249DA405003184C8 /* IllnessListCell.xib in Resources */,
+				69431DCB249D7E9200145896 /* Assets.xcassets in Resources */,
+				691A05CF249DBAC60059F454 /* severity.json in Resources */,
+				691A05C9249DB2B90059F454 /* SeverityColCell.xib in Resources */,
+				691A05D6249DF39E0059F454 /* HospitalListCell.xib in Resources */,
+				69431DC9249D7E9100145896 /* Main.storyboard in Resources */,
+				69FE4568249D929E003184C8 /* zombie.db in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69431DD2249D7E9200145896 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CEFECE2FC36CD8DD0025E88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZombiePalo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D658416DD24D94AA51041E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZombiePaloTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8342DB8524C2C5769E4A911E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZombiePalo/Pods-ZombiePalo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZombiePalo/Pods-ZombiePalo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZombiePalo/Pods-ZombiePalo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69431DB8249D7E9100145896 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69FE456C249D94BE003184C8 /* Util.swift in Sources */,
+				69FE4570249D98F4003184C8 /* Hospital.swift in Sources */,
+				695F636824A027CC009BF0AC /* Connectivity.swift in Sources */,
+				691A05D9249E236F0059F454 /* HospitalViewController.swift in Sources */,
+				695F6366249F7ECF009BF0AC /* ZombieScoreViewController.swift in Sources */,
+				69FE4572249D9911003184C8 /* Illness.swift in Sources */,
+				69431DEE249D8D7800145896 /* ParseJSON.swift in Sources */,
+				691A05CD249DB7420059F454 /* Severity.swift in Sources */,
+				69431DC6249D7E9100145896 /* ZombieZapperViewController.swift in Sources */,
+				69431DE6249D81C500145896 /* IllnessList.swift in Sources */,
+				69431DEC249D8D3D00145896 /* ZombieAPI.swift in Sources */,
+				698BC70F249EDD81007DC809 /* UIImageView+Extension.swift in Sources */,
+				691A05D7249DF39E0059F454 /* HospitalListCell.swift in Sources */,
+				69FE4574249D995A003184C8 /* WaitingList.swift in Sources */,
+				69FE4569249D929E003184C8 /* DBManager.swift in Sources */,
+				691A05CB249DB6C60059F454 /* SeverityColCell.swift in Sources */,
+				69431DEA249D86AD00145896 /* PageLinks.swift in Sources */,
+				69431DC0249D7E9100145896 /* AppDelegate.swift in Sources */,
+				69431DC2249D7E9100145896 /* SceneDelegate.swift in Sources */,
+				69FE456E249D98C4003184C8 /* Location.swift in Sources */,
+				69FE457C249DA405003184C8 /* IllnessListCell.swift in Sources */,
+				691A05C7249DADB50059F454 /* SeverityViewController.swift in Sources */,
+				69431DE8249D844600145896 /* HospitalList.swift in Sources */,
+				691A05D3249DF1EE0059F454 /* HospitalListViewController.swift in Sources */,
+				69FE4578249DA317003184C8 /* IllnessListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69431DD0249D7E9200145896 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69431DD9249D7E9200145896 /* zombiePaloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69431DD6249D7E9200145896 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69431DBB249D7E9100145896 /* ZombiePalo */;
+			targetProxy = 69431DD5249D7E9200145896 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69431DC7249D7E9100145896 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69431DC8249D7E9100145896 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		69431DCC249D7E9200145896 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69431DCD249D7E9200145896 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69431DDB249D7E9200145896 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		69431DDC249D7E9200145896 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69431DDE249D7E9200145896 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCEB5C11D61ABECC4BA59BC7 /* Pods-ZombiePalo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = RKZZE6LU3H;
+				INFOPLIST_FILE = zombiePalo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiePalo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69431DDF249D7E9200145896 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF4D41CE603C21B5E3911C7 /* Pods-ZombiePalo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = RKZZE6LU3H;
+				INFOPLIST_FILE = zombiePalo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiePalo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69431DE1249D7E9200145896 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3885A5888B93DD7CC29C3B37 /* Pods-ZombiePaloTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7769RMD73;
+				INFOPLIST_FILE = zombiePaloTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiePaloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZombiePalo.app/ZombiePalo";
+			};
+			name = Debug;
+		};
+		69431DE2249D7E9200145896 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EEE851931BAC069A333C6A6 /* Pods-ZombiePaloTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7769RMD73;
+				INFOPLIST_FILE = zombiePaloTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zombiePaloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZombiePalo.app/ZombiePalo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69431DB7249D7E9100145896 /* Build configuration list for PBXProject "ZombiePalo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69431DDB249D7E9200145896 /* Debug */,
+				69431DDC249D7E9200145896 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69431DDD249D7E9200145896 /* Build configuration list for PBXNativeTarget "ZombiePalo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69431DDE249D7E9200145896 /* Debug */,
+				69431DDF249D7E9200145896 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69431DE0249D7E9200145896 /* Build configuration list for PBXNativeTarget "ZombiePaloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69431DE1249D7E9200145896 /* Debug */,
+				69431DE2249D7E9200145896 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69431DB4249D7E9100145896 /* Project object */;
+}
