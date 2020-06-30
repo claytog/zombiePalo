@@ -1,0 +1,28 @@
+{
+  "severity": [
+    {
+      "id": 1,
+      "title": "Asymptomatic",
+      "imageName": "asymptomatic",
+      "levelOfPain": 1
+    },
+    {
+      "id": 2,
+      "title": "Weathery",
+      "imageName": "weathery",
+      "levelOfPain": 2
+    },
+    {
+      "id": 3,
+      "title": "Contagious",
+      "imageName": "contagious",
+      "levelOfPain": 3
+    },
+    {
+      "id": 4,
+      "title": "Morphing",
+      "imageName": "morphing",
+      "levelOfPain": 4
+    }
+  ]
+}
