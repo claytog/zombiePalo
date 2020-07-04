@@ -9,132 +9,58 @@
 import Foundation
 
 class ParseJSON {
-
-    class func parseHospital(jsonData: Data, completion : @escaping (ZombieHospitalList?)->()){
-
-        let decoder = JSONDecoder()
-             
-        let obj: ZombieHospitalList
-        var errMsg = ""
+   
+    class func parseObject<T: Codable>(jsonData: Data) -> (T?, String?){
         
-        do{
-        
-            obj = try decoder.decode(ZombieHospitalList.self, from: jsonData)
-            
-            let resultList = obj.self
-            
-            print("resultList count: " + String(obj.list.hospitals.count) )
-
-            completion(resultList)
-            
-        } catch let DecodingError.dataCorrupted(context) {
-            print(context)
-            print(context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Decoding Error: " + context.debugDescription + "\n\( context.codingPath)"
-                
-        } catch let DecodingError.keyNotFound(key, context) {
-            print("Key '\(key)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Key '\(key)' not found:" + context.debugDescription + "\n\( context.codingPath)"
-
-        } catch let DecodingError.valueNotFound(value, context) {
-            print("Value '\(value)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Value '\(value)' not found:" + context.debugDescription + "\n\( context.codingPath)"
-
-        } catch let DecodingError.typeMismatch(type, context)  {
-            print("Type '\(type)' mismatch:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Type '\(type)' mismatch:" + context.debugDescription + "\n\( context.codingPath)"
-        } catch {
-            print("error: ", error)
-            errMsg = "error: " + error.localizedDescription
-        }
-        if errMsg != "" {
-            completion(nil)
+        if let utf8Text = String(data: jsonData, encoding: .utf8) {
+            print("\(T.self ) data: \(utf8Text)")
         }
         
+        var returnTuple: (T?, String?) = (nil,nil)
         
-    }
-    
-    class func parseIllness(jsonData: Data, completion : @escaping (ZombieIllnessList?)->()){
-
-        let decoder = JSONDecoder()
-             
-        let obj: ZombieIllnessList
-        var errMsg = ""
-        
-        do{
-        
-            obj = try decoder.decode(ZombieIllnessList.self, from: jsonData)
-            completion(obj)
-            
-        } catch let DecodingError.dataCorrupted(context) {
-            print(context)
-            print(context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Decoding Error: " + context.debugDescription + "\n\( context.codingPath)"
-                
-        } catch let DecodingError.keyNotFound(key, context) {
-            print("Key '\(key)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Key '\(key)' not found:" + context.debugDescription + "\n\( context.codingPath)"
-
-        } catch let DecodingError.valueNotFound(value, context) {
-            print("Value '\(value)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Value '\(value)' not found:" + context.debugDescription + "\n\( context.codingPath)"
-
-        } catch let DecodingError.typeMismatch(type, context)  {
-            print("Type '\(type)' mismatch:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            errMsg = "Type '\(type)' mismatch:" + context.debugDescription + "\n\( context.codingPath)"
-        } catch {
-            print("error: ", error)
-            errMsg = "error: " + error.localizedDescription
-        }
-        if errMsg != "" {
-            completion(nil)
-        }
-    }
-    
-    class func parseSeverity() -> SeverityList?{
-        var returnList: SeverityList?
-
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        
+        let obj: T
+        
+        var errMsg: String?
+        
+        do{
+            
+            obj = try decoder.decode(T.self, from: jsonData)
+            returnTuple.0 = obj
+            
+        } catch let DecodingError.dataCorrupted(context) {
+            print(context)
+            print(context.debugDescription)
+            print("codingPath:", context.codingPath)
+            errMsg = "Decoding Error: \(context.debugDescription)\n\( context.codingPath)"
+                
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("Key '\(key)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            errMsg = "Key '\(key)' not found: \(context.debugDescription)\n\( context.codingPath)"
 
-        if let jsonData =  Util.readJSON(fileName: "severity") {
+        } catch let DecodingError.valueNotFound(value, context) {
+            print("Value '\(value)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            errMsg = "Value '\(value)' not found: \(context.debugDescription)\n\( context.codingPath)"
 
-        //        if let utf8Text = String(data: jsonData! as Data, encoding: .utf8) {
-        //            print("FORM Data: \(utf8Text)")
-        //        }
-
-           do{
-
-            returnList = try decoder.decode(SeverityList.self, from: jsonData as Data)
-
-           } catch let DecodingError.dataCorrupted(context) {
-               print(context)
-           } catch let DecodingError.keyNotFound(key, context) {
-               print("Key '\(key)' not found:", context.debugDescription)
-               print("codingPath:", context.codingPath)
-           } catch let DecodingError.valueNotFound(value, context) {
-               print("Value '\(value)' not found:", context.debugDescription)
-               print("codingPath:", context.codingPath)
-           } catch let DecodingError.typeMismatch(type, context)  {
-               print("Type '\(type)' mismatch:", context.debugDescription)
-               print("codingPath:", context.codingPath)
-           } catch {
-               print("error: ", error)
-           }
+        } catch let DecodingError.typeMismatch(type, context)  {
+            print("Type '\(type)' mismatch:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+            errMsg = "Type '\(type)' mismatch:\(context.debugDescription)\n\( context.codingPath)"
+        } catch {
+            print("error: ", error)
+            errMsg = "error: \(error.localizedDescription)"
         }
-        return returnList
-        }
+        returnTuple.1 = errMsg
+
+        return returnTuple
+    }
     
-   
-
+    
+    
     
 }
 

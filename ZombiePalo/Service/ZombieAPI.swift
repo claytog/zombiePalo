@@ -21,28 +21,23 @@ class ZombieAPI {
         let urlString:String = baseURI + "hospitals"
             
         Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
-            
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                         print("Films data: \(utf8Text)")
-//            }
 
-            ParseJSON.parseHospital (jsonData: response.data!, completion: { list in
-                
-                var returnHospitalList: HospitalList?
-                
-                if let hospitalList = list?.list.hospitals {
-                    returnHospitalList = list?.list
-                    
-                    for hospital in hospitalList { // insert film into local database
-                        Hospital.insert(hospital: hospital, completion: {success  in
-                            
-                        })
-                            
-                    }
+            let hospitalTuple: (ZombieHospitalList?, String?) = ParseJSON.parseObject(jsonData: response.data!)
+            
+            if let hospitalList = hospitalTuple.0 {
+                for hospital in hospitalList.list.hospitals {
+                    Hospital.insert(hospital: hospital, completion: {success  in
+                    })
                 }
-                completion(returnHospitalList)
-            })
+                completion(hospitalList.list)
+            }else{
+                if let errMsg = hospitalTuple.1 {
+                    print (errMsg)
+                }
+                completion(nil)
+            }
         }
+        
     }
     
     func fetchIllnesses(completion: @escaping (IllnessList?) -> ()) {
@@ -51,44 +46,43 @@ class ZombieAPI {
         
         Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
             
-//            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                         print("Character data: \(utf8Text)")
-//            }
-
-            ParseJSON.parseIllness(jsonData: response.data!, completion: { list in
-                    
-                var returnIllnessList: IllnessList?
-                
-                if (list?.list.illnesses) != nil {
-                    returnIllnessList = list?.list
-                    
-                    if let illnesses = returnIllnessList?.illnesses {
-                        for illness in illnesses { // insert film into local database
-                            Illness.insert(illness: illness.illness, completion: {success  in
-
-                            })
-                        }
-                    }
-                }
-                completion(returnIllnessList)
-            })
+            let illnessTuple: (ZombieIllnessList?, String?) = ParseJSON.parseObject(jsonData: response.data!)
             
+            if let illnessList = illnessTuple.0 {
+                for illness in illnessList.list.illnesses {
+                    Illness.insert(illness: illness.illness, completion: { success in
+                    })
+                }
+                completion(illnessList.list)
+            }else{
+                if let errMsg = illnessTuple.1 {
+                    print (errMsg)
+                }
+                completion(nil)
+            }
         }
     
     }
     
     func fetchSeverity(completion: @escaping (SeverityList?) -> ()) {
         
-        var returnSeverityList: SeverityList?
-        
-        
-        if let severityList = ParseJSON.parseSeverity() {
-            returnSeverityList = severityList
-            for severity in severityList.severity {
-                Severity.insert(severity: severity, completion: { success in
-                })
+        if let jsonData =  Util.readJSON(fileName: "severity") {
+            
+            let severityTuple: (SeverityList?, String?) = ParseJSON.parseObject(jsonData: jsonData as Data)
+            
+            if let severityList = severityTuple.0 {
+                for severity in severityList.severity {
+                    Severity.insert(severity: severity, completion: { success in
+                    })
+                }
+                completion(severityList)
+            }else{
+                if let errMsg = severityTuple.1 {
+                    print (errMsg)
+                }
+                completion(nil)
             }
         }
-        completion(returnSeverityList)
     }
+    
 }
