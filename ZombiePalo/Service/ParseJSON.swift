@@ -12,9 +12,10 @@ class ParseJSON {
    
     class func parseObject<T: Codable>(jsonData: Data) -> (T?, String?){
         
-        if let utf8Text = String(data: jsonData, encoding: .utf8) {
-            print("\(T.self ) data: \(utf8Text)")
-        }
+// output raw json
+//        if let utf8Text = String(data: jsonData, encoding: .utf8) {
+//            print("\(T.self ) data: \(utf8Text)")
+//        }
         
         var returnTuple: (T?, String?) = (nil,nil)
         

@@ -18,23 +18,37 @@ class ZombieAPI {
     
     func fetchHospitals(completion: @escaping (HospitalList?) -> ()) {
         
-        let urlString:String = baseURI + "hospitals"
+        let directoryName = "hospitals"
+        
+        let urlString:String = baseURI + directoryName
             
         Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
 
-            let hospitalTuple: (ZombieHospitalList?, String?) = ParseJSON.parseObject(jsonData: response.data!)
+            var parseData:Data?
             
-            if let hospitalList = hospitalTuple.0 {
-                for hospital in hospitalList.list.hospitals {
-                    Hospital.insert(hospital: hospital, completion: {success  in
-                    })
-                }
-                completion(hospitalList.list)
+            if let error = response.error {
+                parseData = Util.readJSON(fileName: directoryName)
+                print (error.localizedDescription)
             }else{
-                if let errMsg = hospitalTuple.1 {
-                    print (errMsg)
+                parseData = response.data!
+            }
+            
+            if let data = parseData {
+                
+                let hospitalTuple: (ZombieHospitalList?, String?) = ParseJSON.parseObject(jsonData: data)
+                
+                if let hospitalList = hospitalTuple.0 {
+                    for hospital in hospitalList.list.hospitals {
+                        Hospital.insert(hospital: hospital, completion: {success  in
+                        })
+                    }
+                    completion(hospitalList.list)
+                }else{
+                    if let errMsg = hospitalTuple.1 {
+                        print (errMsg)
+                    }
+                    completion(nil)
                 }
-                completion(nil)
             }
         }
         
@@ -42,23 +56,37 @@ class ZombieAPI {
     
     func fetchIllnesses(completion: @escaping (IllnessList?) -> ()) {
             
-        let urlString:String = baseURI + "illnesses"
+        let directoryName = "illnesses"
+        
+        let urlString:String = baseURI + directoryName
         
         Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
             
-            let illnessTuple: (ZombieIllnessList?, String?) = ParseJSON.parseObject(jsonData: response.data!)
+            var parseData:Data?
             
-            if let illnessList = illnessTuple.0 {
-                for illness in illnessList.list.illnesses {
-                    Illness.insert(illness: illness.illness, completion: { success in
-                    })
-                }
-                completion(illnessList.list)
+            if let error = response.error {
+                parseData = Util.readJSON(fileName: directoryName)
+                print (error.localizedDescription)
             }else{
-                if let errMsg = illnessTuple.1 {
-                    print (errMsg)
+                parseData = response.data!
+            }
+            
+            if let data = parseData {
+            
+                let illnessTuple: (ZombieIllnessList?, String?) = ParseJSON.parseObject(jsonData: data)
+            
+                if let illnessList = illnessTuple.0 {
+                    for illness in illnessList.list.illnesses {
+                        Illness.insert(illness: illness.illness, completion: { success in
+                        })
+                    }
+                    completion(illnessList.list)
+                }else{
+                    if let errMsg = illnessTuple.1 {
+                        print (errMsg)
+                    }
+                    completion(nil)
                 }
-                completion(nil)
             }
         }
     
@@ -66,7 +94,9 @@ class ZombieAPI {
     
     func fetchSeverity(completion: @escaping (SeverityList?) -> ()) {
         
-        if let jsonData =  Util.readJSON(fileName: "severity") {
+        let directoryName = "severity"
+        
+        if let jsonData =  Util.readJSON(fileName: directoryName) {
             
             let severityTuple: (SeverityList?, String?) = ParseJSON.parseObject(jsonData: jsonData as Data)
             

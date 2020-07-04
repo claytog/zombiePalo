@@ -82,13 +82,13 @@ class Util {
         return (minutes / 60, (minutes % 60))
     }
     
-    class func readJSON(fileName: String) -> NSData!{
+    class func readJSON(fileName: String) -> Data!{
         
-        var jsonData: NSData? = nil
+        var jsonData: Data? = nil
         
         if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) as NSData
+                jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 // do stuff
             } catch {
                 // handle error
