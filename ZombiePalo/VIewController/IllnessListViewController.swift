@@ -40,45 +40,45 @@ class IllnessListViewController: UIViewController {
     
     func loadData() {
            
-           Util.shared.showActivityIndicator(self)
-           
-           let group = DispatchGroup()
-           
-           group.enter()
-           DispatchQueue.global().async {
-               ZombieAPI.shared.fetchHospitals(completion: { hospitalList in
-                   group.leave()
-               })
-           }
-           
-           group.enter()
-           DispatchQueue.global().async {
-               ZombieAPI.shared.fetchIllnesses(completion: { hospitalList in
-                   group.leave()
-               })
-           }
-           
-           group.enter()
-           DispatchQueue.global().async {
-               ZombieAPI.shared.fetchIllnesses(completion: { hospitalList in
-                   group.leave()
-               })
-           }
-           
-           group.enter()
-           DispatchQueue.global().async {
-               ZombieAPI.shared.fetchSeverity(completion: { severityList in
-                   group.leave()
-               })
-           }
+        Util.shared.showActivityIndicator(self)
+       
+        let group = DispatchGroup()
+    
+        group.enter()
+        DispatchQueue.global().async {
+           ZombieAPI.shared.fetchHospitals(completion: { hospitalList in
+               group.leave()
+           })
+        }
 
-           group.notify(queue: .main) {
-               
+        group.enter()
+        DispatchQueue.global().async {
+           ZombieAPI.shared.fetchIllnesses(completion: { hospitalList in
+               group.leave()
+           })
+        }
+
+        group.enter()
+        DispatchQueue.global().async {
+           ZombieAPI.shared.fetchIllnesses(completion: { hospitalList in
+               group.leave()
+           })
+        }
+
+        group.enter()
+        DispatchQueue.global().async {
+           ZombieAPI.shared.fetchSeverity(completion: { severityList in
+               group.leave()
+           })
+        }
+
+        group.notify(queue: .main) {
+           
             self.illnessList = Illness.getAll()
             self.illnessListTableView.reloadData()
             Util.shared.hideActivityIndicator()
-           }
-       }
+        }
+   }
     
 
 }

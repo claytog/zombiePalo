@@ -36,7 +36,6 @@ class Hospital: Codable {
         self.location = location
     }
 }
-
 extension Hospital: FetchableRecord, PersistableRecord{
 
     class func insert(hospital: Hospital, completion : @escaping (Bool)->()){

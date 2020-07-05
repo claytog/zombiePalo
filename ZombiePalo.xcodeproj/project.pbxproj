@@ -163,8 +163,6 @@
 				69431DE4249D81A800145896 /* Model */,
 				69431DBF249D7E9100145896 /* AppDelegate.swift */,
 				69431DC1249D7E9100145896 /* SceneDelegate.swift */,
-				69431DC5249D7E9100145896 /* ZombieZapperViewController.swift */,
-				695F6365249F7ECF009BF0AC /* ZombieScoreViewController.swift */,
 				69431DC7249D7E9100145896 /* Main.storyboard */,
 				69431DE3249D811900145896 /* Service */,
 				69431DCA249D7E9200145896 /* Assets.xcassets */,
@@ -243,6 +241,8 @@
 				691A05CA249DB6C60059F454 /* SeverityColCell.swift */,
 				691A05C8249DB2B90059F454 /* SeverityColCell.xib */,
 				691A05C6249DADB50059F454 /* SeverityViewController.swift */,
+				69431DC5249D7E9100145896 /* ZombieZapperViewController.swift */,
+				695F6365249F7ECF009BF0AC /* ZombieScoreViewController.swift */,
 			);
 			path = VIewController;
 			sourceTree = "<group>";
@@ -619,7 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = RKZZE6LU3H;
 				INFOPLIST_FILE = zombiePalo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -640,7 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = RKZZE6LU3H;
 				INFOPLIST_FILE = zombiePalo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

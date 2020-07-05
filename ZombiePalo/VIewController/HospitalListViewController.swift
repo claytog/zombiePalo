@@ -57,7 +57,7 @@ class HospitalListViewController: UIViewController {
 
         }else{
             messageLabel.text = "ZOMBIES MAY BE MESSING WITH THE INTERNET"
-        }
+}
         
         ZombieAPI.shared.fetchHospitals(completion:  { success in
             

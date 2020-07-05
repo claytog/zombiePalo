@@ -10,19 +10,31 @@ import Foundation
 import Alamofire
 import GRDB
 
+enum DirectoryAPI: String {
+    case hospital = "hospitals"
+    case illness = "illnesses"
+    case severity = "severity"
+}
+
 class ZombieAPI {
     
     static let shared = ZombieAPI()
     
-    let baseURI = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/"
+    let baseURI = "http://dmmw-api.australiaeast.cloudapp.azure.comm:8080/"
+ 
     
     func fetchHospitals(completion: @escaping (HospitalList?) -> ()) {
         
-        let directoryName = "hospitals"
+        let directoryName = DirectoryAPI.hospital.rawValue
         
         let urlString:String = baseURI + directoryName
             
-        Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
+        guard let url = URL(string: urlString) else {
+          completion(nil)
+          return
+        }
+
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default).validate().response { response in
 
             var parseData:Data?
             
@@ -56,11 +68,16 @@ class ZombieAPI {
     
     func fetchIllnesses(completion: @escaping (IllnessList?) -> ()) {
             
-        let directoryName = "illnesses"
+        let directoryName = DirectoryAPI.illness.rawValue
         
         let urlString:String = baseURI + directoryName
         
-        Alamofire.request(urlString, method: .get, encoding: URLEncoding.default).validate().response { response in
+        guard let url = URL(string: urlString) else {
+          completion(nil)
+          return
+        }
+        
+        Alamofire.request(url, method: .get, encoding: URLEncoding.default).validate().response { response in
             
             var parseData:Data?
             
@@ -94,7 +111,7 @@ class ZombieAPI {
     
     func fetchSeverity(completion: @escaping (SeverityList?) -> ()) {
         
-        let directoryName = "severity"
+        let directoryName = DirectoryAPI.severity.rawValue
         
         if let jsonData =  Util.readJSON(fileName: directoryName) {
             
