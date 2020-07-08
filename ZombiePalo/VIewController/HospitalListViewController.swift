@@ -13,7 +13,7 @@ class HospitalListViewController: UIViewController {
     @IBOutlet weak var hospitalListTableView: UITableView!
     @IBOutlet weak var messageLabel: UILabel!
 
-    var hospitalList: [Hospital] = []
+    var hospitalList: [Hospital?] = [Hospital?](repeating: nil, count: 10)
     
     var selectedSeverity: Severity!
     
@@ -22,8 +22,15 @@ class HospitalListViewController: UIViewController {
     
     private var refreshControl: UIRefreshControl?
     
+    var currentPage: Int = 0
+    var totalPages:Int = 0
+    
+    private var isFetchInProgress: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hospitalListTableView.prefetchDataSource = self
         
         let hospitalListCell = UINib(nibName: HOSPITALLISTCELL, bundle: nil)
         hospitalListTableView.register(hospitalListCell, forCellReuseIdentifier: HOSPITALLISTCELL)
@@ -57,9 +64,9 @@ class HospitalListViewController: UIViewController {
 
         }else{
             messageLabel.text = "ZOMBIES MAY BE MESSING WITH THE INTERNET"
-}
+        }
         
-        ZombieAPI.shared.fetchHospitals(completion:  { success in
+        ZombieAPI.shared.fetchHospitals(limit: 10, page: 0, completion:  { success in
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 self.refreshControl?.endRefreshing()
@@ -86,7 +93,6 @@ class HospitalListViewController: UIViewController {
         
     }
 
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -110,13 +116,17 @@ extension HospitalListViewController:  UITableViewDataSource, UITableViewDelegat
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let hospital = hospitalList[indexPath.row]
-        
+                
         let cell:HospitalListCell = tableView.dequeueReusableCell(withIdentifier: HOSPITALLISTCELL, for: indexPath) as! HospitalListCell
         
-        cell.setupView(hospital: hospital, severity: selectedSeverity)
-        
+        // get the corresponding news object to show from the array
+        if let hospital = hospitalList[indexPath.row]  {
+          cell.setupView(hospital: hospital, severity: selectedSeverity)
+        } else {
+          // init labels
+          cell.truncateView()
+          print("fetchAPI")
+        }
         return cell
     }
     
@@ -125,8 +135,43 @@ extension HospitalListViewController:  UITableViewDataSource, UITableViewDelegat
         let selectedHospital = hospitalList[indexPath.row]
         
         performSegue(withIdentifier: HOSPITALSEGUE, sender: selectedHospital)
-        
     }
     
+}
+// MARK: - prefetching delegate methods
+extension HospitalListViewController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print("prefetching row of \(indexPaths)")
+
+        if !self.isFetchInProgress && currentPage <= totalPages{
+            print("fetching")
+            isFetchInProgress = true
+            ZombieAPI.shared.fetchHospitals(limit: 10, page: currentPage, completion:  { zombieHospitalList in
+                if let hospitalList = zombieHospitalList?.list {
+                    for hospital in hospitalList.hospitals {
+                        self.hospitalList.append(hospital)
+                    }
+                    self.renderHospitalList()
+                }
+                if let number = zombieHospitalList?.page.number {
+                    self.currentPage = number + 1
+                }
+                if let totalPages = zombieHospitalList?.page.totalPages {
+                    self.totalPages = totalPages
+                }
+                self.isFetchInProgress = false
+            })
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+      
+       // cancel the task of fetching news from API when user scroll away from them
+//       for indexPath in indexPaths {
+//         self.cancelFetchNews(ofIndex: indexPath.row)
+//       }
+     }
     
 }
+

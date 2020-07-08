@@ -46,7 +46,7 @@ class IllnessListViewController: UIViewController {
     
         group.enter()
         DispatchQueue.global().async {
-           ZombieAPI.shared.fetchHospitals(completion: { hospitalList in
+           ZombieAPI.shared.fetchHospitals(limit: 10, page: 0, completion: { hospitalList in
                group.leave()
            })
         }

@@ -46,4 +46,10 @@ extension HospitalListCell {
         }
     }
     
+    func truncateView(){
+        hospitalNameLabel.text = "loading"
+        cellImageView.image = nil
+        waitTimeLabel.text = ""
+    }
+    
 }

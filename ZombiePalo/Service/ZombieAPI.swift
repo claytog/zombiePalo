@@ -20,15 +20,16 @@ class ZombieAPI {
     
     static let shared = ZombieAPI()
     
-    let baseURI = "http://dmmw-api.australiaeast.cloudapp.azure.comm:8080/"
+    let baseURI = "http://dmmw-api.australiaeast.cloudapp.azure.com:8080/"
  
-    
-    func fetchHospitals(completion: @escaping (HospitalList?) -> ()) {
+    func fetchHospitals(limit: Int, page: Int, completion: @escaping (ZombieHospitalList?) -> ()) {
         
         let directoryName = DirectoryAPI.hospital.rawValue
         
-        let urlString:String = baseURI + directoryName
+        let urlString:String = "\(baseURI)\(directoryName)?limit=\(String(limit))&page=\(String(page))"
             
+        print(urlString)
+        
         guard let url = URL(string: urlString) else {
           completion(nil)
           return
@@ -54,13 +55,15 @@ class ZombieAPI {
                         Hospital.insert(hospital: hospital, completion: {success  in
                         })
                     }
-                    completion(hospitalList.list)
+                    
+                    completion(hospitalList)
                 }else{
                     if let errMsg = hospitalTuple.1 {
                         print (errMsg)
                     }
                     completion(nil)
                 }
+
             }
         }
         

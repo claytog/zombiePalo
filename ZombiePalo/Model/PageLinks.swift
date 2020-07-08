@@ -19,7 +19,8 @@ class Next: Codable {
 
 // MARK: - WelcomeLinks
 class Links: Codable {
-    var linksSelf, next: Next
+    var linksSelf: Next?
+    var next: Next?
 
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
